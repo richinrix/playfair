@@ -1,4 +1,4 @@
-# playfair
+# Playfair using JavaScript
 This is slightly different than the original playfair cipher logic.
 This uses 7x7 matrix instead of 5x5, this matrix enables u to use numbers and spaces which lets the message to be encrypted to use the letter 'x' or 'q' which is usually used in the encyption using the normal playfair cipher logic.
 The JS logic code was made by https://github.com/Marshyy.
