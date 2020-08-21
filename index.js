@@ -1,3 +1,47 @@
+//
+let snd=new Audio('click.wav');
+$('#encrypting').hide();
+$('#decrypting').hide();
+$('#key').hide();
+$('.button').hide();
+
+$('#enc').click(function (e) { 
+    e.preventDefault();
+    $('#encrypting').show();
+    $('#key').show();
+    $('#decrypting').hide();
+    $('.button').show();
+    $('#btn').html('Click to encrypt');
+
+});
+$('#dec').click(function (e) { 
+    e.preventDefault();
+    $('#decrypting').show();
+    $('#key').show();
+    $('#encrypting').hide();
+    $('.button').show();
+    $('#btn').html('Click to decrypt');
+});
+
+$('#marshylogo').hover(function () {
+        // over
+        $('#marshylogo img').attr('src', 'GitHub-Mark-64px.png');
+    }, function () {
+        // out
+        $('#marshylogo img').attr('src', 'GitHub-Mark-Light-64px.png');
+    }
+);
+$('#rixlogo').hover(function () {
+    // over
+    $('#rixlogo img').attr('src', 'GitHub-Mark-64px.png');
+}, function () {
+    // out
+    $('#rixlogo img').attr('src', 'GitHub-Mark-Light-64px.png');
+}
+);
+
+
+
 //input values
 let data={}
 const encryptInput=document.querySelector('#encrypting>input');
@@ -166,13 +210,16 @@ function inputing()
 
 
     encryptBtn.addEventListener('click',()=>{
+        snd.play();
+        snd.currentTime=0;
         encryptInput.disabled=false;
         keyInput.disabled=false;
         decryptInput.disabled=true;
         enOrDe=0;
     })
     decryptBtn.addEventListener('click',()=>{
-        
+        snd.play();
+        snd.currentTime=0;
         decryptInput.disabled=false;
         keyInput.disabled=false;
         encryptInput.disabled=true;
@@ -180,17 +227,10 @@ function inputing()
     })
 
 
+
     clikme.addEventListener('click',()=>{
-        if(decryptInput.disabled){
-        console.log(encryptInput.value)
-        
-        }
-        else{
-        console.log(decryptInput.value)
-        
-        }
-    })
-    clikme.addEventListener('click',()=>{
+        snd.play();
+        snd.currentTime=0;
          data={
             "key": keyInput.value,
             "encrypt": encryptInput.value,
@@ -198,7 +238,7 @@ function inputing()
             "to": enOrDe,
             "matrix_visible": false
             }
-            console.log(data.to)
+            
             run();
     })
     
