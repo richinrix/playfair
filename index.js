@@ -1,4 +1,8 @@
 //
+$(document).ready(function() {
+    $('body').find("input[type='text'],textarea").val("");
+});
+
 let snd=new Audio('click.wav');
 $('#encrypting').hide();
 $('#decrypting').hide();
